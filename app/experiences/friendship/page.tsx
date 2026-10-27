@@ -17,7 +17,7 @@ import {
   Moon,
   Flower2,
   Footprints,
-  Infinity,
+  Infinity as InfinityIcon,
 } from "lucide-react";
 
 const memories = [
@@ -67,7 +67,7 @@ const moments = [
     number: "04",
     title: "The always",
     text: "Growing, changing, taking different roads — but still having each other.",
-    Icon: Infinity,
+    Icon: InfinityIcon,
   },
 ];
 
