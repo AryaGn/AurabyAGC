@@ -1006,7 +1006,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
               </p>
 
               <form
-                action="https://formsubmit.co/aurabyagc@gmail.com"
+                action="https://formsubmit.co/f175b821746d0a6881e4eef1c72c0697"
                 method="POST"
                 className="mt-8 space-y-5"
               >
