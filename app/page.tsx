@@ -690,25 +690,33 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {experiences.map((experience) => (
-              <ExperienceCard
-                key={experience.number}
-                image={experience.image}
-                title={experience.title}
-                subtitle={experience.subtitle}
-                number={experience.number}
-                details={experience.details}
-                href="#contact"
-               sectionId={
-  experience.theme === "birthday"
-    ? "birthday-websites"
-    : experience.theme === "love"
-      ? "love-story-gifts"
-      : experience.theme === "friendship"
-        ? "friendship-memory-gifts"
-        : "special-celebrations"
-}
-              />
-            ))}
+  <ExperienceCard
+    key={experience.number}
+    image={experience.image}
+    title={experience.title}
+    subtitle={experience.subtitle}
+    number={experience.number}
+    details={experience.details}
+    href={
+      experience.theme === "birthday"
+        ? "/experiences/birthday"
+        : experience.theme === "love"
+          ? "/experiences/love-story"
+          : experience.theme === "friendship"
+            ? "/experiences/friendship"
+            : "/experiences/special-celebrations"
+    }
+    sectionId={
+      experience.theme === "birthday"
+        ? "birthday-websites"
+        : experience.theme === "love"
+          ? "love-story-gifts"
+          : experience.theme === "friendship"
+            ? "friendship-memory-gifts"
+            : "special-celebrations"
+    }
+  />
+))}
           </div>
         </div>
       </section>
