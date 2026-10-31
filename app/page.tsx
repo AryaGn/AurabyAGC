@@ -48,6 +48,7 @@ function ExperienceCard({
   number,
   details,
   href,
+  sectionId,
 }: {
   image: string;
   title: string;
@@ -55,9 +56,11 @@ function ExperienceCard({
   number: string;
   details: string;
   href: string;
+  sectionId: string;
 }) {
   return (
     <motion.article
+      id={sectionId}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -68,7 +71,7 @@ function ExperienceCard({
       <div className="aura-experience-card relative h-[420px] overflow-hidden rounded-[1.7rem] md:h-[450px]">
         <img
           src={image}
-          alt={`${title} personalised website concept`}
+          alt={`${title} personalised digital gift website experience by Aura`}
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
         />
@@ -96,6 +99,7 @@ function ExperienceCard({
 
           <a
             href={href}
+            aria-label={`Start creating a ${title.toLowerCase()} personalised digital gift`}
             className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-4 py-2.5 text-xs font-medium text-white backdrop-blur-md transition-all hover:bg-white hover:text-[#25251f]"
           >
             {title === "Birthday Surprise"
@@ -225,6 +229,41 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
   
     <main className="overflow-hidden bg-[#f4f0e6] text-[#25251f]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://aurabyagc.com/#organization",
+                "name": "Aura",
+                "url": "https://aurabyagc.com/",
+                "logo": "https://aurabyagc.com/images/aura-logo.png",
+                "email": "aurabyagc@gmail.com",
+                "description": "Aura creates personalised digital gifts, birthday websites, love story gifts and friendship memory experiences."
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://aurabyagc.com/#website",
+                "url": "https://aurabyagc.com/",
+                "name": "Aura",
+                "publisher": { "@id": "https://aurabyagc.com/#organization" }
+              },
+              {
+                "@type": "Service",
+                "@id": "https://aurabyagc.com/#personalised-digital-gifts",
+                "name": "Personalised Digital Gifts and Custom Websites",
+                "serviceType": "Custom digital gift and personalised website creation",
+                "provider": { "@id": "https://aurabyagc.com/#organization" },
+                "url": "https://aurabyagc.com/#experiences",
+                "description": "Custom birthday websites, personalised love story gifts, friendship memory pages and digital celebration experiences."
+              }
+            ]
+          })
+        }}
+      />
       <div className="aura-grain" />
 
 
@@ -352,7 +391,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
               className="mb-5 inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/50 px-4 py-2 text-[10px] uppercase tracking-[0.2em] backdrop-blur-sm md:text-xs"
             >
               <span className="h-2 w-2 rounded-full bg-[#c87578]" />
-              Personalized Web Experiences
+              Personalised Digital Gifts & Web Experiences
             </motion.div>
 
             <motion.h1
@@ -374,9 +413,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
               transition={{ duration: 0.7, delay: 0.25 }}
               className="mt-6 max-w-lg text-sm leading-7 text-black/60 md:mt-7 md:text-base md:leading-8"
             >
-              Your memories deserve more than a photo album. Tell me your
-              story, share your moments, and I&apos;ll turn them into a
-              beautiful experience made just for you.
+              Your memories deserve more than a photo album. Aura creates personalised digital gifts, birthday websites and memory-filled online experiences. Share your story, and I&apos;ll turn it into something made just for you.
             </motion.p>
 
             <motion.div
@@ -410,7 +447,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
                 <span className="h-7 w-7 rounded-full border-2 border-[#f4f0e6] bg-[#a8b89a]" />
                 <span className="h-7 w-7 rounded-full border-2 border-[#f4f0e6] bg-[#9b91b5]" />
               </div>
-              Every detail made personal
+              Personalised digital gifts, made around your story
             </div>
           </div>
 
@@ -551,10 +588,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
               </motion.h2>
 
               <p className="mt-7 max-w-2xl text-sm leading-7 text-black/65 md:text-base md:leading-8">
-                Aura turns personal stories into beautiful interactive web
-                experiences. Not templates. Not generic pages. Something
-                designed around the people, photographs and little details
-                that make your story yours.
+                Aura creates personalised digital gifts and custom websites for the people who matter most. From birthday surprise websites to love story and friendship memory pages, every experience is designed around your photographs, messages and little details — never a generic template.
               </p>
 
               <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#6f3947]/15 bg-white/60 px-5 py-3 text-sm shadow-sm">
@@ -635,17 +669,24 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
               </p>
 
               <h2 className="mt-5 font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-7xl">
-                Personalized
+                Personalised
                 <br />
-                <span className="italic text-[#6f3947]">Web Experiences</span>
+                <span className="italic text-[#6f3947]">Digital Gifts</span>
               </h2>
             </div>
 
             <p className="max-w-sm text-sm leading-7 text-black/55 md:text-base">
-              Every person has a story worth celebrating. Choose the feeling
-              you want to create, and we&apos;ll make it personal.
+              Explore personalised birthday websites, love story gifts, friendship memory pages and custom digital surprises. Choose the story you want to celebrate, and Aura will make it personal.
             </p>
           </div>
+
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-black/60 md:text-base">
+  Looking for a thoughtful personalised digital gift? Aura creates custom
+  birthday websites, digital love story gifts, friendship memory pages and
+  personalised celebration experiences. Need a last-minute digital gift?
+  Same-day digital gift creation may be available for selected orders.
+  Contact Aura to confirm availability and delivery time before ordering.
+</p>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {experiences.map((experience) => (
@@ -656,19 +697,15 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
                 subtitle={experience.subtitle}
                 number={experience.number}
                 details={experience.details}
-                
-              
-
-href={
+                href="#contact"
+               sectionId={
   experience.theme === "birthday"
-    ? "/experiences/birthday"
+    ? "birthday-websites"
     : experience.theme === "love"
-      ? "/experiences/love-story"
+      ? "love-story-gifts"
       : experience.theme === "friendship"
-        ? "/experiences/friendship"
-        : experience.theme === "celebrations"
-          ? "/experiences/special-celebrations"
-          : "#contact"
+        ? "friendship-memory-gifts"
+        : "special-celebrations"
 }
               />
             ))}
@@ -802,8 +839,7 @@ href={
             </div>
 
             <p className="max-w-md text-sm leading-7 text-black/60 md:justify-self-end md:text-base">
-              You don&apos;t need to know how to build a website. You just
-              need a story you want to share.
+              You don&apos;t need to know how to build a website. Aura handles the custom digital gift creation — you just need a story you want to share.
             </p>
           </div>
 
@@ -930,10 +966,15 @@ href={
               </h2>
 
               <p className="mt-7 max-w-xl text-sm leading-7 text-black/60 md:text-lg md:leading-8">
-                Tell me who it&apos;s for, what you&apos;re celebrating, and
-                what you want them to feel when they open it. Let&apos;s turn
-                your idea into a personal web experience.
+                Ready to order a personalised digital gift? Tell me who it&apos;s for, what you&apos;re celebrating, and when you need it. I&apos;ll help you create a birthday website, love story, friendship memory page or another personal web experience. For selected orders, same-day delivery may be possible — email aurabyagc@gmail.com to check availability.
               </p>
+
+              <a
+                href="mailto:aurabyagc@gmail.com?subject=Personalised%20Digital%20Gift%20Enquiry"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25251f] px-5 py-3 text-sm text-white transition hover:bg-[#6f3947]"
+              >
+                Order your personalised gift <ArrowRight size={15} />
+              </a>
 
               <div className="mt-10 space-y-4 text-sm text-black/60">
                 {[
