@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aurabyagc.com"),
+  metadataBase: new URL("https://www.aurabyagc.com"),
 
   title: {
     default: "Aura | Personalised Digital Gifts & Experiences",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Aura | Personalised Digital Gifts & Experiences",
     description:
       "Your memories deserve more than a photo album. Create a personalised digital experience with Aura.",
-    url: "https://aurabyagc.com",
+    url: "https://www.aurabyagc.com",
     siteName: "Aura",
     type: "website",
   },
